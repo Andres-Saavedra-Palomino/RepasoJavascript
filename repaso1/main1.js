@@ -4,6 +4,10 @@
 
 
 
+
+
+
+
 //declaracion de variables
 var x//undefined variable de tipo sin definir
 
@@ -42,15 +46,40 @@ var res = document.getElementById("res")
 /*********************************************/
 
 //funciones
-sumar(1, 3)
-function sumar(a = 5, b) {
-	console.log(a + b);
+
+function sumar(a, b) {
+	return a + b
 }
+console.log(sumar(2, 2))
 
 var fun = function resta(a, b) {
-	console.log(a - b);
+	console.log(a - b)
 }
 fun(2, 3)
 
+//funcion flecha
 var flecha = (a, b) => a + b
 console.log(flecha(2, 3))
+
+/*******************************************/
+
+var resultados = []
+btn.addEventListener("click", () => {
+	//guardando los datos
+	var input1 = +n1.value
+	var input2 = +n2.value
+	var r = sumar(input1, input2)
+
+	//engordando el Array
+	resultados.push(r)
+
+	//mostrandolo en el div
+	res.innerHTML += `${r}<br>`
+
+	//limpiando los input
+	n1.value = ""
+	n2.value = ""
+
+	console.log(resultados);
+
+})
