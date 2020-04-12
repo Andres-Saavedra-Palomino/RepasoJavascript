@@ -1,0 +1,10 @@
+EJERCICIO N1
+
+crear un formulario que registre Tareas(nombre de la tarea, fecha, hora, tipo:Importante, Necesaria, Urgente)
+al ser registradas apareceran en una lista de tareas activas
+al dar click sobre alguna tarea activa se mostraran sus datos en la parte de Detalles de tarea
+Detalle de tarea tendra un boton para finalizar la tarea el cual al darle click:
+movera la tarea de la lista de activas a la lista de finalizadas
+
+
+
