@@ -1,0 +1,8 @@
+.artpesca{
+	display: inline-block;
+	width: 45%;
+	border:1px solid white;
+}
+.artpesca p{
+	text-align: justify;
+}
