@@ -1,7 +1,7 @@
 .artpesca{
 	display: inline-block;
 	width: 45%;
-	border:1px solid white;
+	border:1px solid transparent;
 }
 .artpesca p{
 	text-align: justify;

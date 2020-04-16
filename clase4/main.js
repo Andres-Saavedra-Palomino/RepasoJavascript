@@ -29,13 +29,13 @@ function marcado() {
 	this.style = 'border:1px solid red'
 }
 function desmarcado() {
-	this.style = 'border:1px solid white'
+	this.style = 'border:1px solid transparent'
 }
 
 function myHover() {
 	var art = document.getElementsByClassName('artpesca')
-	for (let a = 0; a < art.length; a++) {
-		art[a].addEventListener('mouseover', marcado)
-		art[a].addEventListener('mouseout', desmarcado)
+	for (const a of art) {
+		a.addEventListener('mouseover', marcado)
+		a.addEventListener('mouseout', desmarcado)
 	}
 }
