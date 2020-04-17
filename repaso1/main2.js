@@ -59,3 +59,22 @@ f()
 
 
 boton.addEventListener("click", agregar)
+
+const log = (parametro) => console.log(parametro);
+
+function valores(num1 = 10, num2 = 20, num3 = 30) {
+	var arreglo = [num1, num2, num3]
+
+	let tres = arreglo.toString().indexOf(num3)
+	log({ tres })
+	let suma = arreglo.reduce((acu, ele) => acu + ele)
+	log({ suma });
+	let mapeo = arreglo.map((a) => a + 10)
+	log({ mapeo })
+	let filtro = mapeo.filter((a) => a > 30)
+	log({ filtro })
+	let mam = arreglo.sort((a, b) => a > b ? -1 : 1)
+	log({ mam })
+}
+
+valores(undefined, 32, 101);
