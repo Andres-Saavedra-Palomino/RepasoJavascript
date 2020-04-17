@@ -1,3 +1,4 @@
+/* import { articulos_recursos, baners_recursos, paginasRedesSociales } from './recursos'*/
 var baners_recursos = [
 	"https://via.placeholder.com/900x250?text=BANER+1", "https://via.placeholder.com/900x250?text=BANER+2", "https://via.placeholder.com/900x250?text=BANER+3",]
 var paginasRedesSociales = ["https://www.facebook.com/", "https://www.twitter.com/", "https://www.instagram.com/"]
@@ -8,12 +9,9 @@ var articulos_recursos = [
 	{ titulo: "articulo_4", imagen: "https://via.placeholder.com/400?text=Articulo+4" },
 	{ titulo: "articulo_5", imagen: "https://via.placeholder.com/400?text=Articulo+5" },]
 
-
 //mis array enlaces de articulos
-var misArticulos = []
 var iconoRedesSociales = []
 function miseventos() {
-	misArticulos = document.getElementsByClassName('atipo')
 	iconoRedesSociales = document.getElementsByClassName('imgrs')
 
 	for (const iterator of iconoRedesSociales) {
@@ -63,6 +61,8 @@ function seleccion() {
 }
 
 function alcargar() {
+	carousel()
+	miseventos()
 	enlaces = document.getElementsByClassName('atipo')
 
 	for (let index = 0; index < enlaces.length; index++) {
