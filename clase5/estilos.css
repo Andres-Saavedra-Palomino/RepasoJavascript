@@ -12,6 +12,10 @@ body {
 .redesSociales {
 	text-align: right;
 }
+.imgrs{
+	margin-right: 10px;
+	transition: transform .2s ;
+}
 
 h1 {
 	text-align: center;
@@ -45,4 +49,13 @@ section {
 
 h3 {
 	text-align: center;
+}
+
+.ampliar{
+	transform: scale(1.5);
+	
+}
+.reducir{
+	transform: scale(1.0);
+
 }
