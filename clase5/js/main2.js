@@ -1,13 +1,13 @@
 /* import { articulos_recursos, baners_recursos, paginasRedesSociales } from './recursos'*/
-var baners_recursos = [
+let baners_recursos = [
 	"https://via.placeholder.com/900x250?text=BANER+1",
 	"https://via.placeholder.com/900x250?text=BANER+2",
 	"https://via.placeholder.com/900x250?text=BANER+3",]
-var paginasRedesSociales = [
+let paginasRedesSociales = [
 	"https://www.facebook.com/",
 	"https://www.twitter.com/",
 	"https://www.instagram.com/"]
-var articulos_recursos = [
+let articulos_recursos = [
 	{ titulo: "articulo_1", imagen: "https://via.placeholder.com/400?text=Articulo+1" },
 	{ titulo: "articulo_2", imagen: "https://via.placeholder.com/400?text=Articulo+2" },
 	{ titulo: "articulo_3", imagen: "https://via.placeholder.com/400?text=Articulo+3" },
@@ -16,7 +16,8 @@ var articulos_recursos = [
 
 
 //mis array enlaces de imagenes de redes sociales
-var iconoRedesSociales = document.getElementsByClassName('imgrs')
+let iconoRedesSociales = document.getElementsByClassName('imgrs')
+miseventos()
 function miseventos() {
 	for (const iterator of iconoRedesSociales) {
 		iterator.addEventListener('mouseover', ampliar)
@@ -24,7 +25,7 @@ function miseventos() {
 		iterator.addEventListener('click', social)
 	}
 }
-miseventos()
+
 //1
 function ampliar() {
 	this.classList.add("ampliar")
@@ -38,14 +39,14 @@ function reducir() {
 }
 //3
 function social() {
-	var iSocial = Array.from(iconoRedesSociales).indexOf(event.target)
+	let iSocial = Array.from(iconoRedesSociales).indexOf(event.target)
 	/* window.location.replace("URL") */
 	window.open(paginasRedesSociales[iSocial])
 }
 //4
 //iterador del Carousel
-var i = 1
-var miCarousel = document.getElementById('imgbaner')
+let i = 1
+let miCarousel = document.getElementById('imgbaner')
 function carousel() {
 
 	setInterval(() => {
@@ -56,17 +57,18 @@ function carousel() {
 }
 //5
 //array de los enlaces
-var enlaces = document.getElementsByClassName('atipo')
-var artTitulo = document.getElementById('articuloTitulo')
-var artImagen = document.getElementById('articuloImagen')
+let enlaces = document.getElementsByClassName('atipo')
+let artTitulo = document.getElementById('articuloTitulo')
+let artImagen = document.getElementById('articuloImagen')
+
+for (enlace of enlaces) {
+	enlace.addEventListener('click', seleccion)
+}
 function seleccion() {
-	var it = Array.from(enlaces).indexOf(event.target)
+	let it = Array.from(enlaces).indexOf(event.target)
 	artTitulo.innerText = articulos_recursos[it].titulo
 	artImagen.src = articulos_recursos[it].imagen
 }
 
-for (let index = 0; index < enlaces.length; index++) {
-	enlaces[index].addEventListener('click', seleccion)
-}
 
 document.addEventListener('DOMContentLoaded', carousel)
