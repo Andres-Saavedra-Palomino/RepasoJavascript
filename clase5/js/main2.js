@@ -1,18 +1,18 @@
 /* import { articulos_recursos, baners_recursos, paginasRedesSociales } from './recursos'*/
 let baners_recursos = [
-	"https://via.placeholder.com/900x250?text=BANER+1",
-	"https://via.placeholder.com/900x250?text=BANER+2",
-	"https://via.placeholder.com/900x250?text=BANER+3",]
+	"1",
+	"2",
+	"3",]
 let paginasRedesSociales = [
 	"https://www.facebook.com/",
 	"https://www.twitter.com/",
 	"https://www.instagram.com/"]
 let articulos_recursos = [
-	{ titulo: "articulo_1", imagen: "https://via.placeholder.com/400?text=Articulo+1" },
-	{ titulo: "articulo_2", imagen: "https://via.placeholder.com/400?text=Articulo+2" },
-	{ titulo: "articulo_3", imagen: "https://via.placeholder.com/400?text=Articulo+3" },
-	{ titulo: "articulo_4", imagen: "https://via.placeholder.com/400?text=Articulo+4" },
-	{ titulo: "articulo_5", imagen: "https://via.placeholder.com/400?text=Articulo+5" },]
+	{ titulo: "articulo_1", imagen: "1" },
+	{ titulo: "articulo_2", imagen: "2" },
+	{ titulo: "articulo_3", imagen: "3" },
+	{ titulo: "articulo_4", imagen: "4" },
+	{ titulo: "articulo_5", imagen: "5" },]
 
 
 //mis array enlaces de imagenes de redes sociales
@@ -50,7 +50,7 @@ let miCarousel = document.getElementById('imgbaner')
 function carousel() {
 
 	setInterval(() => {
-		miCarousel.src = baners_recursos[i]
+		miCarousel.src = `https://via.placeholder.com/900x250?text=BANER+${baners_recursos[i]}`
 		i++
 		i = i == 3 ? 0 : i
 	}, 1000);
@@ -67,8 +67,14 @@ for (enlace of enlaces) {
 function seleccion() {
 	let it = Array.from(enlaces).indexOf(event.target)
 	artTitulo.innerText = articulos_recursos[it].titulo
-	artImagen.src = articulos_recursos[it].imagen
+	artImagen.src = `https://via.placeholder.com/400?text=Articulo+${articulos_recursos[it].imagen}`
 }
 
 
 document.addEventListener('DOMContentLoaded', carousel)
+fetch('https://jsonplaceholder.typicode.com/photos')
+	.then(response => response.json())
+	.then(json => {
+		let p20 = json.filter(a => a.id < 20)
+		console.log(p20)
+	})

@@ -22,7 +22,6 @@ function carrusel() {
 		i++
 		i = i == 4 ? 0 : i
 	}, 1000);
-
 }
 
 function marcado() {
